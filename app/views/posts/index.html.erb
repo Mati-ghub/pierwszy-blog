@@ -1,0 +1,19 @@
+<p class="lead">
+  Spis komentarzy
+</p>
+
+<% @posts.each do |post| %>
+  <blockquote>
+    <p><%= link_to post.content, post_path(post) %>
+    <% if post.mature_content  %>
+      <%= "- posty (+18)" %>
+    <%end %>
+    </p>
+    <footer><cite><%= post.user.email %></cite></footer>
+    <%= link_to "Edytuj", edit_post_path(post), class: "btn btn-default btn-xs" %>
+    <%= button_to "Usuń", post_path(post), method: :delete, class: "btn btn-danger btn-xs" %>
+  </blockquote>
+<%end %>
+<h4>
+<%= link_to "Dodaj własny komentarz.", new_post_path %>
+</h4>

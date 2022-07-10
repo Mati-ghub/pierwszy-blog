@@ -1,0 +1,12 @@
+<h2>Dodawanie nowego wpisu</h2>
+
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.label :content, "Treść" %>
+    <%= f.text_area :content, class: "form-control"  %>
+    <%= f.label :mature_content, "Zaznacz jesli post jest +18"  %>
+    <%= f.check_box :mature_content  %>
+
+  </div>
+  <%= f.submit "Dodaj komentarz", class: "btn btn-default" %>
+<%end %>

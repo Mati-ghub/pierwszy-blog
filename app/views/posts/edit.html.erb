@@ -1,0 +1,9 @@
+<h2>Edycja wpisu</h2>
+
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.label :content, "Treść" %>
+    <%= f.text_area :content, class: "form-control"  %>
+  </div>
+  <%= f.submit "Edytuj komentarz", class: "btn btn-default" %>
+<%end %>

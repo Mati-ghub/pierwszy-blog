@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <p>You got a new order from <%= @post.user.email %>!</p>
+      Message:<br>
+        ----------
+    </p>
+    <p><%= @post.content %></p>
+  </body>
+</html>

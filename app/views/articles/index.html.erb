@@ -1,0 +1,17 @@
+<p> Zapraszam do kontaktu, gwarancja zadowolenia</p>
+
+  <% if current_user %>
+    <p> Witam <%= current_user.email %>!<p/>
+    <p>
+      Zalogowałes sie poprawnie, super</p>
+
+
+    <%= button_to 'Wyloguj', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <p> Nie jestes zalogowany</p>
+    <%= link_to "Zarejestruj się", new_user_registration_path %>
+    <%= link_to "Zaloguj", new_user_session_path  %>
+  <% end %>
+
+
+

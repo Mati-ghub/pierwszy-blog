@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">Blog</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li <% if params[:controller] == "articles" && params[:action] == "index" %> class="active"<% end %>><a href="/">Strona Główna</a></li>
+    <li <% if params[:controller] == "posts" && params[:action] == "index" %> class="active"<% end %>><a href="/posts">Posty</a></li>
+  </ul>
+</nav>
+<div class="home-page">
+  <h1> Witamy na Blogu </h1>
+</div>
+<% if flash[:notice]  %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+<% end %>
+</div>
+<%= yield %>
+</body>
+</html>
